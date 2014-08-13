@@ -1,15 +1,26 @@
+//genera un numero aleatorio entre un rango de enteros
+function patito(minimo,maximo)
+{
+	var numero = Math.floor(Math.random() * (maximo - minimo + 1) + minimo);
+	return numero;
+}
+
 var piedra = 0;
 var papel = 1;
 var tijera = 2;
 
+var opciones = ["Piedra","Papel","Tijera"]; 
+
 var opcionUsuario;
-var opcionMaquina = papel;
+var opcionMaquina = patito(0,2);
 
 opcionUsuario = prompt("Que Eliges?\n Piedra: 0 \n Papel : 1\n Tijera: 2", 0);
 
+alert("Elegiste " + opciones[opcionUsuario]);
+alert("JavaScript eligió " + opciones[opcionMaquina]);
+
 if (opcionUsuario == piedra)
 {
-	alert("Elegistes Piedra!");
 	if (opcionMaquina == piedra)
 	{
 		alert("Empate!");
@@ -25,7 +36,6 @@ if (opcionUsuario == piedra)
 }
 else if (opcionUsuario == papel)
 {
-	alert("Elegistes Papel!");
 	if (opcionMaquina == piedra)
 	{
 		alert("Ganaste!");
@@ -41,7 +51,6 @@ else if (opcionUsuario == papel)
 }
 else if (opcionUsuario == tijera) 
 {
-	alert("Elegistes Tijera!");
 	if (opcionMaquina == piedra)
 	{
 		alert("Perdiste!");
